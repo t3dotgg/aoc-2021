@@ -1,3 +1,5 @@
+export const x = "";
+
 const results = await Deno.readTextFile("./input.txt");
 
 const depths = results.split("\n").map((n) => parseInt(n, 10));
