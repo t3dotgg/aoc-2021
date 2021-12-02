@@ -4,8 +4,6 @@ const results = await Deno.readTextFile("./input.txt");
 
 const depths = results.split("\n").map((n) => parseInt(n, 10));
 
-console.log(depths);
-
 let increases = 0;
 
 for (let i = 0; i < depths.length - 3; i++) {
