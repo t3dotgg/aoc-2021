@@ -2,9 +2,7 @@ export const aaaaa = "";
 
 const results = await Deno.readTextFile("./input.txt");
 
-let processed = results.split("\n").map((line) => line.split(""));
-
-const length = processed[0].length;
+const processed = results.split("\n").map((line) => line.split(""));
 
 const getOxygen = (input: string[][]) => {
   let currentBit = 0;
