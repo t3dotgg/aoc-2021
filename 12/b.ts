@@ -3,7 +3,7 @@ export const aaaaa = "";
 const results = await Deno.readTextFile("./input.txt");
 // const results = await Deno.readTextFile("./example.txt");
 
-let lines = results.split("\n").map((row) => row.split("-"));
+const lines = results.split("\n").map((row) => row.split("-"));
 
 const validPaths = new Map<string, string[]>();
 
