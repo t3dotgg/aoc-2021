@@ -1,29 +1,23 @@
 export const aaaaa = "";
 
 const results = await Deno.readTextFile("./input.txt");
-
-const [top, linesBody] = results.split("\n\n");
-
-const lines = linesBody
-  .split("\n")
-  .map((r) => r.split(" -> ") as [string, string]);
-
-const rules = new Map<string, string>(lines);
+const [polymer, lines] = results.split("\n\n");
+const rules = new Map<string, string>(
+  lines.split("\n").map((r) => r.split(" -> ") as [string, string])
+);
 
 const counts = new Map<string, number>();
-
-top.split("").forEach((char) => {
+polymer.split("").forEach((char) => {
   counts.set(char, (counts.get(char) ?? 0) + 1);
 });
 
 let pairs = new Map<string, number>();
-for (let x = 1; x < top.length; x++) {
-  const pair = top[x - 1] + top[x];
+for (let x = 1; x < polymer.length; x++) {
+  const pair = polymer[x - 1] + polymer[x];
   pairs.set(pair, (pairs.get(pair) ?? 0) + 1);
 }
 
 let steps = 0;
-
 while (steps < 40) {
   const newPairs = new Map<string, number>();
   pairs.forEach((count, pair) => {
