@@ -7,8 +7,8 @@ const grid = (await Deno.readTextFile("./input.txt"))
 const width = grid[0].length * 5;
 const height = grid.length * 5;
 
-const fullGrid = Array.apply(null, Array(height)).map((_, y) =>
-  Array.apply(null, Array(width)).map((_, x) => {
+const fullGrid = Array.from({ length: height }, (_, y) =>
+  Array.from({ length: width }, (_, x) => {
     return (
       ((grid[y % grid.length][x % grid[0].length] +
         Math.floor(y / grid.length) +
