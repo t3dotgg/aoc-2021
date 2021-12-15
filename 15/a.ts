@@ -51,9 +51,7 @@ const traverse = (x: number, y: number) => {
     scoreBoard[y][x] = score;
 
     traverse(x - 1, y);
-    traverse(x + 1, y);
     traverse(x, y - 1);
-    traverse(x, y + 1);
     return;
   }
 };
