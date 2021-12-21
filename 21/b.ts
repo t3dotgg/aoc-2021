@@ -37,6 +37,6 @@ const doCheck = (p1: number, s1: number, p2: number, s2: number) => {
   return [p1wins, p2wins];
 };
 
-const ans = doCheck(p1, p2, 0, 0);
+const ans = doCheck(p1, 0, p2, 0);
 
 console.log(ans);
